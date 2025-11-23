@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>Happy Birthday Emma</title>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<style type="text/css">
+		@font-face {
+			font-family: digit;
+			src: url('digital-7_mono.ttf') format("truetype");
+		}
+	</style>
+	<link href="css/default.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript" src="js/garden.js"></script>
+    <script type="text/javascript" src="js/birthday-app.js"></script>
+</head>
+
+<body>
+	<div id="mainDiv">
+		<div id="content">
+			<div id="code">
+				<span class="comments">HAPPY BIRTHDAY MY LOVE</span><br />
+				<span class="space"/><span class="comments">Today is your birthday.</span><br />
+				<span class="space"/><span class="comments">Happy Birthday, Emma 🎉🩵It’s crazy to think we only met in June, because you’ve become such an important part of my life so quickly. Since that first conversation, your kindness, and your beautiful heart have stood out in the best way.
+I love how naturally we connect and how we can talk about anything, laugh, and share moments that just feel easy and real. Even the TikTok videos you send me make my day more than you realize. It’s the little things with you that always seem to mean the most.❤️
+I admire how dedicated you are to becoming a physician assistant. It fits you perfectly….you’re caring, hardworking, thoughtful, and genuinely loving. The world needs more people with a heart like yours.
+
+Thank you for being supportive, encouraging, and simply unforgettable. I’m grateful for every message, every laugh, and every moment we’ve shared.
+I hope your birthday is filled with joy, peace, and everything that makes you feel appreciated. You deserve nothing less.
+Enjoy your day, Emma. And just know you’ve made a place in my heart.🖤🩵</span><br />
+</div>
+			<div id="loveHeart">
+				<canvas id="garden"></canvas>
+				<div id="words">
+					<div id="messages">
+					</br>
+					</br>
+					</br>
+					</br>
+					</br>
+					</br>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		// Modern implementation using the new BirthdayApp class
+		const together = new Date();
+		together.setFullYear(1908, 4, 8);
+		together.setHours(8);
+		together.setMinutes(0);
+		together.setSeconds(0);
+		together.setMilliseconds(0);
+		
+		if (!document.createElement('canvas').getContext) {
+			const msg = document.createElement("div");
+			msg.id = "errorMsg";
+			msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
+			document.body.appendChild(msg);
+			document.getElementById("code").style.display = "none";
+			const copyright = document.getElementById("copyright");
+			copyright.style.position = "absolute";
+			copyright.style.bottom = "10px";
+		    document.execCommand("stop");
+		} else {
+			// Wait for BirthdayApp to initialize
+			document.addEventListener('DOMContentLoaded', function() {
+				setTimeout(() => {
+					if (window.birthdayApp) {
+						window.birthdayApp.startHeartAnimation();
+					}
+				}, 5000);
+
+				// Start time counter
+				if (window.birthdayApp) {
+					window.birthdayApp.timeElapse(together);
+					setInterval(() => {
+						window.birthdayApp.timeElapse(together);
+					}, 500);
+
+					window.birthdayApp.adjustCodePosition();
+					window.birthdayApp.typewriter(document.getElementById("code"));
+				}
+			});
+		}
+	</script>
+</body>
+</html>
