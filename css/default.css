@@ -1,3 +1,10 @@
+/* Main background */
+body { background: #000; }
+
+/* Text colors */
+.comments { color: #7F7F7F; }
+.keyword { color: #06C; }
+.string { color: #080; }
 body {
     margin: 0;
     padding: 0;
