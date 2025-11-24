@@ -32,7 +32,7 @@ body {
 #words {
     font-family: "sans-serif";
     width: 500px;
-    font-size: 30px;
+    font-size: 70px;
     color: #000000
 }
 
@@ -71,7 +71,7 @@ body {
     height: 400px;
     color: #000000;
     font-family: "Consolas", "Monaco", "Bitstream Vera Sans Mono", "Courier New", "sans-serif";
-    font-size: 12px
+    font-size: 30px
 }
 
 #code .string {
